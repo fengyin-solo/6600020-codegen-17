@@ -17,6 +17,15 @@ export interface Device {
   registers: ModbusRegister[]
 }
 
+export interface DeviceNote {
+  id: string
+  deviceId: string
+  content: string
+  operator: string
+  createdAt: number
+  updatedAt: number
+}
+
 export interface Alarm {
   id: string
   deviceId: string
@@ -25,4 +34,5 @@ export interface Alarm {
   level: 'info' | 'warning' | 'critical'
   timestamp: number
   acknowledged: boolean
+  deviceNotes: DeviceNote[]
 }
